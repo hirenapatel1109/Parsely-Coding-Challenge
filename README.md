@@ -19,4 +19,7 @@
 
 _Keep in mind that the URL depends on how you set it up. If you use minikube and your minikube cluster runs on http://192.168.99.102/ locally, go to this website_
 
-- Go to http://192.168.99.102/anagrams?prompt=pots
+- You can try the following endpoints:
+  -- http://192.168.99.102/anagrams?prompt=pots
+  -- http://192.168.99.102/generatePuzzle?difficulty=2
+  -- http://192.168.99.102/verify?puzzle=ENOBOPIHAISM&guess=AMBIOPHONIES
