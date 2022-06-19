@@ -71,9 +71,9 @@ def generatePuzzle():
     diff = request.args.get("difficulty")
     if diff is None or len(diff) <= 0:
         return "Please add a valid diff in generatePuzzle. Example: /generatePuzzle?difficulty=1. difficulty is between 0 - 2", 400
+    diff = int(diff)
     if diff < 0 or diff > 2:
         return "ERROR: Please use 0-2 difficulty"
-    diff = int(diff)
     randomList = None
     wordLens = list(words.keys())
     if diff == 0:
@@ -105,7 +105,7 @@ def verify():
     puzzle = list(puzzle)
     for char in guess:
         if char not in puzzle:
-            return False
+            return json.dumps({"result": False})
         else:
             puzzle.remove(char)
     return json.dumps({"result": len(puzzle) == 0})
