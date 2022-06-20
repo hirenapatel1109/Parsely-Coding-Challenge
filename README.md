@@ -1,6 +1,6 @@
 # Puzzle creater and anagram solver
 
-## How to deploy
+## How to deploy in Kubernetes
 
 ### Install Minikube (if running locally)
 
@@ -25,3 +25,10 @@ You can try the following endpoints:
 - http://192.168.99.102/anagrams?prompt=pots
 - http://192.168.99.102/generatePuzzle?difficulty=2
 - http://192.168.99.102/verify?puzzle=ENOBOPIHAISM&guess=AMBIOPHONIES
+
+## How to deploy in Docker
+
+run `docker build . -t pslytestcode`
+run `docker run -dp 80:5000 pslytestcode`
+Then goto the URL where the docker-machine is ran. You can figure that out by running `docker-machine env` if you setup docker in a VM. For me it is http://192.168.99.100/ by default
+Then you can use the above endpoints with this URL.
